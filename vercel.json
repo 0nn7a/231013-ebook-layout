@@ -1,3 +1,5 @@
 {
-  "rewrites": [{ "source": "/:path*", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/api/:path(.*)", "destination": "https://230313-ebook-server.vercel.app/:path" },
+    { "source": "/:path*", "destination": "/index.html" }]
 }

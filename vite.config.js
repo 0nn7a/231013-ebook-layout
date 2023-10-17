@@ -37,7 +37,6 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      //其中一個代理：代表的是如果前綴是 /api 的請求都導向 http://localhost:3000
       "/api": {
         target: "https://230313-ebook-server.vercel.app",
         changeOrigin: true,
