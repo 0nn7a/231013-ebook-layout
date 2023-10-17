@@ -1,0 +1,14 @@
+%heading {
+  font-family: "Fahkwang", "Montserrat", "Noto Sans TC", Inter, Avenir,
+  Helvetica, Arial, sans-serif;
+  transform: scaleX(0.8);
+  transform-origin: top left;
+}
+
+.heading {
+  &-1 {
+    @extend %heading;
+    font-size: 3rem;
+    font-weight: 650;
+  }
+}

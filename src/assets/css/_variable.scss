@@ -1,0 +1,20 @@
+:root {
+  --e-color-white: #fff;
+  --e-color-black: #000;
+
+  --e-color-text: #272935;
+  --e-color-subtext: #8B8B87;
+
+  --e-color-theme-light: #fdfcf6;
+  --e-color-theme: #efeee5;
+  --e-color-theme-dark: #e1e1db;
+
+  --e-color-key-1: #E36064;
+}
+
+// Break Point
+$bp-xs: 425px;
+$bp-sm: 735px;
+$bp-md: 900px;
+$bp-lg: 1200px;
+$bp-xl: 1600px;

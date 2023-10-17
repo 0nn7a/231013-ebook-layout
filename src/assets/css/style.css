@@ -1,0 +1,85 @@
+:root {
+  --e-color-white: #fff;
+  --e-color-black: #000;
+  --e-color-text: #272935;
+  --e-color-subtext: #8B8B87;
+  --e-color-theme-light: #fdfcf6;
+  --e-color-theme: #efeee5;
+  --e-color-theme-dark: #e1e1db;
+  --e-color-key-1: #E36064;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  line-height: 1.5;
+  font-family: "Montserrat", "Noto Sans TC", Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  color: var(--e-color-text);
+  background-color: var(--e-color-theme-light);
+}
+
+body,
+#app,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+input,
+button {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading-1 {
+  font-family: "Fahkwang", "Montserrat", "Noto Sans TC", Inter, Avenir, Helvetica, Arial, sans-serif;
+  transform: scaleX(0.8);
+  transform-origin: top left;
+}
+
+.heading-1 {
+  font-size: 3rem;
+  font-weight: 650;
+}
+
+/*# sourceMappingURL=style.css.map */
