@@ -1,4 +1,5 @@
 <script setup>
+import useApi from "@/api/request.js";
 const route = useRoute();
 
 const bgBlock = ref(null);
@@ -16,11 +17,13 @@ const toggleActive = (id, index) => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   toggleActive(
     route.name,
     icons.list.findIndex((item) => item === route.name)
   );
+  const res = await useApi.get("/");
+  console.log(res);
 });
 </script>
 
