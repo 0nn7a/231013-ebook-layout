@@ -2,7 +2,7 @@ import axios from "axios";
 
 //主要的Axios實例
 const instance = axios.create({
-  baseURL: "https://230313-ebook-server.vercel.app",
+  baseURL: "/api",
   timeout: 15000,
   headers: {
     "Content-Type": "application/json; charset=utf-8",
