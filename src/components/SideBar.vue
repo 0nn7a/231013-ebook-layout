@@ -7,6 +7,7 @@ const icons = reactive({
   list: ["Home", "Books", "Bookmark", "Set"],
 });
 const toggleActive = (id, index) => {
+  console.log(id, index);
   if (icons.active !== id) {
     icons.active = id;
     let topVal = index * 50;
