@@ -8,7 +8,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/231013-ebook-layout/",
+  base: "/",
   plugins: [
     vue(),
     AutoImport({
