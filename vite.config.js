@@ -14,7 +14,7 @@ export default defineConfig({
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
-      dirs: ["src/router"],
+      dirs: ["src/router", "src/stores"],
       dts: "./auto-imports.d.ts",
     }),
     Components({
@@ -35,10 +35,12 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  envPrefix: "EBOOK_",
   server: {
     proxy: {
       "/api": {
         target: "https://230313-ebook-server.vercel.app",
+        // target: "http://localhost:3000",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

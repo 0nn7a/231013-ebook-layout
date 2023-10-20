@@ -1,5 +1,4 @@
 <script setup>
-import useApi from "@/api/request.js";
 const route = useRoute();
 
 const bgBlock = ref(null);
@@ -8,7 +7,6 @@ const icons = reactive({
   list: ["Home", "Books", "Bookmark", "Set"],
 });
 const toggleActive = (id, index) => {
-  console.log(id, index);
   if (icons.active !== id) {
     icons.active = id;
     let topVal = index * 50;
@@ -16,14 +14,21 @@ const toggleActive = (id, index) => {
     router.push({ name: id });
   }
 };
+watch(
+  () => route.name,
+  (val) => {
+    toggleActive(
+      val,
+      icons.list.findIndex((item) => item === val)
+    );
+  }
+);
 
 onMounted(async () => {
   toggleActive(
     route.name,
     icons.list.findIndex((item) => item === route.name)
   );
-  const res = await useApi.get("/");
-  console.log(res);
 });
 </script>
 
@@ -102,7 +107,7 @@ onMounted(async () => {
     }
   }
   &__item--active {
-    color: var(--e-color-theme-light);
+    color: var(--e-color-theme-lighter);
     &:hover {
       opacity: 1;
     }

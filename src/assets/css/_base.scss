@@ -35,7 +35,7 @@ html {
   grid-template-rows: max-content 1fr;
   grid-template-columns: max-content 1fr;
   color: var(--e-color-text);
-  background-color: var(--e-color-theme-light);
+  background-color: var(--e-color-theme-lighter);
 }
 
 body,
@@ -53,6 +53,14 @@ input,
 button {
   font-family: inherit;
   font-weight: inherit;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 ul,
