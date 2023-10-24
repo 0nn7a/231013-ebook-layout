@@ -39,8 +39,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://230313-ebook-server.vercel.app",
-        // target: "http://localhost:3000",
+        target: "https://two31024-ebook-server.onrender.com/",
+        // target: "http://localhost:8080",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
