@@ -17,7 +17,7 @@ function saveRefreshToken(token, expired) {
   document.cookie = `${EBOOK_REFRESH_TOKEN_KEY}=${token}; expires=${expired}; path=/`;
 }
 function saveAllToken(res) {
-  const { token, refreshToken, expireTime, expireTimeR } = res.data;
+  const { token, refreshToken, expireTime, expireTimeR } = res;
   saveToken(token, expireTime);
   saveRefreshToken(refreshToken, expireTimeR);
 }

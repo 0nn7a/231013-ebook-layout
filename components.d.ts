@@ -7,10 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AlertMeg: typeof import('./src/components/AlertMeg.vue')['default']
     BookmarkPage: typeof import('./src/views/BookmarkPage.vue')['default']
     BooksPage: typeof import('./src/views/BooksPage.vue')['default']
     HeaderBar: typeof import('./src/components/HeaderBar.vue')['default']
     HomePage: typeof import('./src/views/HomePage.vue')['default']
+    ModalDialog: typeof import('./src/components/ModalDialog.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SetPage: typeof import('./src/views/SetPage.vue')['default']

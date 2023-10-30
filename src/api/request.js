@@ -56,6 +56,7 @@ AxiosEbook.interceptors.request.use(
         }
       }
       if (!JWT.getToken() && !JWT.getRefreshToken()) {
+        userStore.initUserInfo();
         console.error(
           "ERROR! apiRefreshToken at request",
           "訪問此網站需要登入"
@@ -79,6 +80,12 @@ AxiosEbook.interceptors.request.use(
 
 AxiosEbook.interceptors.response.use(
   (response) => {
+    const userStore = useUserStore();
+
+    // 存儲 JWT
+    if (response.data.data && response.data.data.jwt) {
+      JWT.saveAllToken(response.data.data.jwt);
+    }
     return response.data;
   },
   (error) => {
@@ -119,6 +126,9 @@ const useApi = {
   },
   postParams(url, json) {
     return AxiosEbook.post(url, null, { params: json });
+  },
+  putBody(url, data, json) {
+    return AxiosEbook.put(url, data, { params: json });
   },
   patchBody(url, data, json) {
     return AxiosEbook.patch(url, data, { params: json });

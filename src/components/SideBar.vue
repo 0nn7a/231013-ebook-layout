@@ -65,7 +65,7 @@ onMounted(async () => {
     padding: 0.5rem;
     width: 4rem;
     height: 4rem;
-    background-color: var(--e-color-theme-dark);
+    background-color: var(--e-color-primary-dark);
     border-radius: 5rem;
     transition: all 0.3s ease-in-out;
     &:hover {
@@ -107,7 +107,7 @@ onMounted(async () => {
     }
   }
   &__item--active {
-    color: var(--e-color-theme-lighter);
+    color: var(--e-color-primary-lighter);
     &:hover {
       opacity: 1;
     }
@@ -123,7 +123,7 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--e-color-theme);
+    background-color: var(--e-color-primary);
     transform: translateX(-100%);
     transition: all 0.35s cubic-bezier(0.11, 0.29, 0.44, 1);
   }
