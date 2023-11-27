@@ -315,6 +315,8 @@ onUnmounted(() => {
       <transition name="opacity" mode="out-in">
         <div v-if="userDetail.popup" class="user__popup" @click.stop>
           <ul v-if="userStore.userInfo.username" class="user__list">
+            <p>{{ userStore.userInfo.username }}</p>
+
             <li @click="toggleDialog('dialog', true)">更新個人資料</li>
             <li @click="logout">登出</li>
           </ul>
@@ -631,8 +633,13 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
+    font-size: 1.2rem;
+    p {
+      color: var(--e-color-primary);
+      border-bottom: 1px solid var(--e-color-primary-light);
+      cursor: default;
+    }
     li {
-      font-size: 1.2rem;
       transition: all 0.2s ease-in-out;
       &:hover {
         color: var(--e-color-subtext);
