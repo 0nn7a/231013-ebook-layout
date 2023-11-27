@@ -685,7 +685,7 @@ onUnmounted(() => {
       border-radius: 0.5rem;
       transition: all 0.2s ease-in-out;
       &:hover {
-        background-color: var(--e-color-primary-light);
+        opacity: 0.75;
         cursor: pointer;
       }
     }
