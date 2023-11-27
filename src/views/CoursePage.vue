@@ -1,11 +1,11 @@
 <script setup></script>
 
 <template>
-  <section class="set__container"><h1>SetPage</h1></section>
+  <section class="course__container"><h1>CoursePage</h1></section>
 </template>
 
 <style lang="scss" scoped>
-.set {
+.course {
   &__container {
   }
 }

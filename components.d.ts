@@ -8,8 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AlertMeg: typeof import('./src/components/AlertMeg.vue')['default']
-    BookmarkPage: typeof import('./src/views/BookmarkPage.vue')['default']
-    BooksPage: typeof import('./src/views/BooksPage.vue')['default']
+    CalendarPage: typeof import('./src/views/CalendarPage.vue')['default']
+    CoursePage: typeof import('./src/views/CoursePage.vue')['default']
     HeaderBar: typeof import('./src/components/HeaderBar.vue')['default']
     HomePage: typeof import('./src/views/HomePage.vue')['default']
     ModalDialog: typeof import('./src/components/ModalDialog.vue')['default']
@@ -18,5 +18,7 @@ declare module 'vue' {
     SetPage: typeof import('./src/views/SetPage.vue')['default']
     SideBar: typeof import('./src/components/SideBar.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
+    TaskPage: typeof import('./src/views/TaskPage.vue')['default']
+    UserInfo: typeof import('./src/components/UserInfo.vue')['default']
   }
 }

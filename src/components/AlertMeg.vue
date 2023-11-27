@@ -15,7 +15,6 @@ const updateCountdown = () => {
       item.time -= 1;
     }
   });
-  console.log("running!!!");
 };
 watch(
   () => megStore.messages.length,
@@ -65,8 +64,9 @@ watch(
     gap: 1rem;
     max-width: 30rem;
     padding: 1.5rem 2rem;
-    background-color: var(--e-color-white);
-    box-shadow: 0 0 1rem var(--e-color-primary-darker);
+    background-color: var(--e-color-bg);
+    border: 1px solid var(--e-color-primary);
+    box-shadow: 0 0 1rem var(--e-color-shadow);
     border-radius: 1rem;
     svg {
       flex-shrink: 0;

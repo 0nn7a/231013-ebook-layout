@@ -48,8 +48,8 @@ const closeDialog = () => {
     max-width: 40rem;
     display: flex;
     flex-direction: column;
-    background-color: var(--e-color-white);
-    border: 1px solid var(--e-color-primary-darker);
+    background-color: var(--e-color-bg);
+    border: 1px solid var(--e-color-primary-light);
     border-radius: 1.5rem;
     transform: translate(-50%, -50%);
   }
@@ -58,10 +58,10 @@ const closeDialog = () => {
     display: flex;
     align-items: center;
     padding: 1rem 1.5rem;
-    background-color: var(--e-color-primary-lighter);
+    background-color: var(--e-color-primary-light);
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    border-bottom: 1px solid var(--e-color-primary-dark);
+    border-bottom: 1px solid var(--e-color-primary-light);
     &__title {
       font-size: 1.2rem;
       font-weight: 450;
@@ -93,7 +93,7 @@ const closeDialog = () => {
   &__btn {
     &-cancel {
       @extend %dialogBtn;
-      color: var(--e-color-text);
+      color: var(--e-color-bg);
       background-color: var(--e-color-primary);
       &:hover {
         background-color: var(--e-color-primary-dark);
@@ -101,7 +101,7 @@ const closeDialog = () => {
     }
     &-submit {
       @extend %dialogBtn;
-      color: var(--e-color-primary-light);
+      color: var(--e-color-primary-lighter);
       background-color: var(--e-color-key-1);
       &:hover {
         background-color: var(--e-color-key-1-dark);

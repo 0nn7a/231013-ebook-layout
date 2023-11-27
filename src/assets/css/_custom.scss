@@ -1,14 +1,63 @@
 %heading {
-  font-family: "Fahkwang", "Montserrat", "Noto Sans TC", Inter, Avenir,
-  Helvetica, Arial, sans-serif;
-  transform: scaleX(0.8);
-  transform-origin: top left;
+  letter-spacing: 0.02em;
 }
 
 .heading {
   &-1 {
     @extend %heading;
+    font-size: 3.2rem;
+  }
+  &-2 {
+    @extend %heading;
     font-size: 3rem;
-    font-weight: 650;
+  }
+  &-5 {
+    @extend %heading;
+    font-size: 1.8rem;
+  }
+  &-6 {
+    @extend %heading;
+    font-size: 1.6rem;
+  }
+}
+
+.unvalidated {
+  &-outline {
+    border: 1px solid var(--e-color-key-1) !important;
+  }
+  &-text {
+    align-self: flex-end;
+    font-size: 0.85rem;
+    color: var(--e-color-key-1);
+  }
+}
+
+.form {
+  &-label {
+    letter-spacing: 0.05em;
+    padding: 0 0.5rem;
+
+    &:not(:first-of-type) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &-input {
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: var(--e-color-text);
+    background-color: var(--e-color-bg);
+    border: 1px solid var(--e-color-primary-light);
+    border-radius: 0.5rem;
+    outline: none;
+
+    &:focus {
+      border: 1px solid var(--e-color-primary);
+    }
+
+    &::placeholder {
+      color: var(--e-color-shadow);
+    }
   }
 }

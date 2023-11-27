@@ -3,6 +3,7 @@ import JWT from "@/api/cookies.js";
 import router from "@/router/index.js";
 import { apiRefreshToken } from "@/api/users.js";
 import { useUserStore } from "@/stores/user.js";
+import { useMegStore } from "@/stores/meg.js";
 
 // 主要的 Axios 實例
 const AxiosEbook = axios.create({
@@ -33,6 +34,7 @@ const passAuthUrls = ["/users/signup", "/users/login"];
 AxiosEbook.interceptors.request.use(
   async (config) => {
     const userStore = useUserStore();
+    const megStore = useMegStore();
 
     // 取消請求
     const cancelReq = new AbortController();
@@ -43,24 +45,27 @@ AxiosEbook.interceptors.request.use(
       if (!JWT.getToken() && JWT.getRefreshToken()) {
         try {
           await apiRefreshToken();
-          console.log("apiRefreshToken at request", "已成功換發 Token");
+          console.log("apiRefreshToken at request", "已成功換發 Token！");
         } catch (e) {
           //可能是 refreshToken 有問題 用戶所有資訊清空
           userStore.clearUserInfo();
+          megStore.pushMegs("Meg-Danger", "登入信息驗證失敗，將導向重新登入！");
           console.error(
             "ERROR! apiRefreshToken at request",
-            "換發 Token 失敗，將導向重新登入",
+            "換發 Token 失敗，將導向重新登入！",
             e
           );
           await router.push({ name: "Home" });
         }
       }
       if (!JWT.getToken() && !JWT.getRefreshToken()) {
+        userStore.clearUserInfo();
         userStore.initUserInfo();
         console.error(
           "ERROR! apiRefreshToken at request",
-          "訪問此網站需要登入"
+          "進行此操作需要登入！"
         );
+        megStore.pushMegs("Meg-Danger", "您尚未登入，無權進行此操作！");
         await router.push({ name: "Home" });
         cancelReq.abort();
       }
@@ -74,14 +79,13 @@ AxiosEbook.interceptors.request.use(
     return config;
   },
   (error) => {
+    console.log(error);
     return Promise.reject(error);
   }
 );
 
 AxiosEbook.interceptors.response.use(
   (response) => {
-    const userStore = useUserStore();
-
     // 存儲 JWT
     if (response.data.data && response.data.data.jwt) {
       JWT.saveAllToken(response.data.data.jwt);

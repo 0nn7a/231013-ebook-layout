@@ -1,6 +1,6 @@
 ::selection {
-  //color: var(--y-color-text);
-  //background: var(--y-color-light);
+  color: var(--e-color-subtext);
+  background: var(--e-color-primary-light);
 }
 
 *,
@@ -35,7 +35,10 @@ html {
   grid-template-rows: max-content 1fr;
   grid-template-columns: max-content 1fr;
   color: var(--e-color-text);
-  background-color: var(--e-color-primary-lighter);
+  background-color: var(--e-color-bg);
+  & > section {
+    padding: 0 2rem 2.5rem;
+  }
 }
 
 body,
@@ -58,7 +61,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: var(--e-color-text);
   -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset;
   transition: background-color 5000s ease-in-out 0s;
 }

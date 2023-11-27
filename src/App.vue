@@ -1,15 +1,8 @@
-<script setup>
-import { useUserStore } from "@/stores/user.js";
-import { useMegStore } from "@/stores/meg.js";
-const userStore = useUserStore();
-const megStore = useMegStore();
-
-userStore.initUserInfo();
-</script>
+<script setup></script>
 
 <template>
-  <SideBar />
   <HeaderBar />
+  <SideBar />
   <router-view />
   <AlertMeg />
 </template>

@@ -2,19 +2,36 @@
   --e-color-white: #fff;
   --e-color-black: #000;
 
-  --e-color-text: #272935;
-  --e-color-subtext: #8b8b87;
+  --e-color-bg: #ffffff;
+  --e-color-text: #1f1f20;
+  --e-color-subtext: #8b8891;
+  --e-color-shadow: #d9d7de;
 
-  --e-color-primary-lighter: #fdfcf6;
-  --e-color-primary-light: #f5f3ec;
-  --e-color-primary: #efeee5;
-  --e-color-primary-dark: #e1e1db;
-  --e-color-primary-darker: #d0d0c6;
+  --e-color-primary-lighter: #f6f5fd;
+  --e-color-primary-light: #ebeafa;
+  --e-color-primary: #8b64fd;
+  --e-color-primary-dark: #6a45d5;
+  //--e-color-primary-darker: #c9c6d0;
 
-  --e-color-key-1: #e36064;
-  --e-color-key-1-dark: #d35256;
-  --e-color-key-2: #4f9cc5;
-  --e-color-key-2-dark: #3f85a9;
+  --e-color-key-1: #ff644f;
+  --e-color-key-1-dark: #b74031;
+  --e-color-key-2: #77aff0;
+  --e-color-key-2-dark: #4774a8;
+}
+:root[theme="dark"] {
+  --e-color-bg: #242428;
+  --e-color-text: #ececf5;
+  --e-color-shadow: #514f56;
+
+  --e-color-primary-lighter: #2b2b34;
+  --e-color-primary-light: #3a2e62;
+  --e-color-primary: #8b64fd;
+  --e-color-primary-dark: #a184ff;
+
+  --e-color-key-1: #b74031;
+  --e-color-key-1-dark: #ff644f;
+  --e-color-key-2: #4774a8;
+  --e-color-key-2-dark: #77aff0;
 }
 
 // Break Point
